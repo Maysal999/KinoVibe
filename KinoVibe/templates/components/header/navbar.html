@@ -1,0 +1,19 @@
+<nav class="navbar-kino">
+    <h1>KinoVibe</h1>
+
+    {% include 'components/header/search.html' %}
+    <ul class="list-ul">
+        <li class="list-nav"><a href="#">HOME</a></li>
+        {% if is_authenticated %}
+        <li class="list-nav"><a href="#">PROFILE</a></li>
+        {% else %}
+        <li class="list-nav"><a href="#">SIGN IN</a></li>
+        <li class="list-nav"><a href="#">SIGN UP</a></li>
+        
+        {% endif %}
+            
+        
+        
+    </ul>
+
+</nav>
