@@ -1,0 +1,25 @@
+
+  
+        {% for con in content  %}
+        <!-- <video width="auto" height="auto" autoplay muted>
+            <source src="{{con.video.url}}" type="video/mp4">
+  
+          Your browser does not support the video tag.
+          </video>  -->
+  
+    
+            <div class="conindex" style="display: block;">
+              {% if con.background_image %}
+              <a href="#"><img src="{{con.background_image.url}}" alt="" style=" display: block;width: 250px; height: 150px;"></a>
+              {% else %}
+              <p></p>
+              {% endif %}
+              <a href="#">
+                <h3 >{{con.title}}</h3>
+              </a>
+             <a href="#" class="card-button-a">Visit</a>
+            </div>
+
+
+        {% endfor %}
+

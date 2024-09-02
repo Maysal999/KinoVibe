@@ -1,9 +1,13 @@
-<ul>
+
+<div class="sidebar">
+  <ul>
+      
     
-  
-  {% for cat in  categories %}
-    <li><a href="#">cat</a></li>
-  {% endfor %}
-    
-        
-</ul>
+    {% for cat in  categories %}
+      <li><a href='#'>{{cat.category|capfirst}}</a></li>
+    {% endfor %}
+      
+          
+  </ul>
+
+</div>

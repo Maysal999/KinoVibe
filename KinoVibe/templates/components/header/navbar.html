@@ -2,8 +2,8 @@
     <h1>KinoVibe</h1>
 
     {% include 'components/header/search.html' %}
-    <ul class="list-ul">
-        <li class="list-nav"><a href="#">HOME</a></li>
+    <ul class="list-ul" style="display: flex;">
+        <li class="list-nav" style="color: black;"><a href="#">HOME</a></li>
         {% if is_authenticated %}
         <li class="list-nav"><a href="#">PROFILE</a></li>
         {% else %}

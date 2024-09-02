@@ -1,0 +1,16 @@
+.sidebar {
+    height: 700px;
+    box-shadow: 2px 0px 8px -2px rgba(0, 0, 0, 0.45);
+    
+}
+
+.sidebar ul li {
+    margin-right: 20px;
+    list-style-type: none
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

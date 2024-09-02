@@ -15,12 +15,14 @@
 }
 .list-nav{
     list-style-type: none;
-    display: inline;
 }
 
-.list-ul{
+
+
+.list-ul li a{
     display: flex;
     margin-right: 20px;
+   
 }
 .list-nav a{
     text-decoration: none;
