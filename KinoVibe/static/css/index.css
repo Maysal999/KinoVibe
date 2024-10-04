@@ -4,13 +4,3 @@
     
 }
 
-.sidebar ul li {
-    margin-right: 20px;
-    list-style-type: none
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}

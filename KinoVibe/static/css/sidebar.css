@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    height: 100vh; /* Full height sidebar */
+    /* Fixed on the left side of the page */
+    margin-top: 4px;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    margin-bottom: 15px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    display: block;
+}
+
+.category-list a:hover {
+    color: #f39c12; /* Change color on hover */
+    transition: 0.3s;
+}

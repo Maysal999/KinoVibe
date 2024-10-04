@@ -4,7 +4,7 @@
       
     
     {% for cat in  categories %}
-      <li><a href='#'>{{cat.category|capfirst}}</a></li>
+      <li><a href='{% url "category" cat.id %}'>{{cat.category|capfirst}}</a></li>
     {% endfor %}
       
           

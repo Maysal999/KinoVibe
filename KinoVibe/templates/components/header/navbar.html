@@ -1,14 +1,14 @@
-<nav class="navbar-kino">
+<!-- <nav class="navbar-kino" style="height: 50px;">
     <h1>KinoVibe</h1>
 
     {% include 'components/header/search.html' %}
     <ul class="list-ul" style="display: flex;">
-        <li class="list-nav" style="color: black;"><a href="#">HOME</a></li>
+        <li class="list-nav" style="color: black;"><a href="#" style="margin-top: 15px;">HOME</a></li>
         {% if is_authenticated %}
-        <li class="list-nav"><a href="#">PROFILE</a></li>
+        <li class="list-nav" ><a href="#" style="margin-top: 15px;">PROFILE</a></li>
         {% else %}
-        <li class="list-nav"><a href="#">SIGN IN</a></li>
-        <li class="list-nav"><a href="#">SIGN UP</a></li>
+        <li class="list-nav"><a href="#" style="margin-top: 15px;">SIGN IN</a></li>
+        <li class="list-nav"><a href="#" style="margin-top: 15px;">SIGN UP</a></li>
         
         {% endif %}
             
@@ -16,4 +16,19 @@
         
     </ul>
 
+</nav> -->
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="#">KinoVibe</a>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-bar">
+        <button class="search-btn">Search</button>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'register' %}">Sign In</a></li>
+        <li><a href="{% url 'login' %}">Sign Up</a></li>
+    </ul>
 </nav>

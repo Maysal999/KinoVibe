@@ -1,4 +1,4 @@
-
+<!-- 
   
         {% for con in content  %}
         <!-- <video width="auto" height="auto" autoplay muted>
@@ -7,19 +7,27 @@
           Your browser does not support the video tag.
           </video>  -->
   
-    
-            <div class="conindex" style="display: block;">
+<!--     
+            <div class="movie-card" style="margin-bottom: 20px; margin-top: 20px; ">
               {% if con.background_image %}
-              <a href="#"><img src="{{con.background_image.url}}" alt="" style=" display: block;width: 250px; height: 150px;"></a>
-              {% else %}
-              <p></p>
-              {% endif %}
-              <a href="#">
-                <h3 >{{con.title}}</h3>
-              </a>
-             <a href="#" class="card-button-a">Visit</a>
-            </div>
+              <img src="{{con.background_image.url}}" alt="Movie Image" class="movie-image" sty>
+              <h3 class="movie-title" text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  font-size: 20px;>{{con.title}}</h3>
 
 
-        {% endfor %}
+                
+
+  <p class="movie-rating">Rating: ★★★★☆</p>
+              <div class="card-buttons">
+                  <button class="visit-btn"><a href="">Visit</a></button>
+                  <button class="watch-btn">Watch</button>
+              </div>
+          </div>
+          {% endif %} -->
+        
+
+
+        {% endfor %} -->
 

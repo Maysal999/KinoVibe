@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    
+
+    
+<div class="movie-details-container" >
+    <div class="movie-header">
+        <img src="{{ movie.background_image.url}}" alt="Movie Image" class="movie-image">
+        <div class="movie-info">
+            <h1 class="movie-title">{{movie.title}}</h1>
+            <p class="movie-genre"><strong>Genre:</strong>{{movie.genre}}</p>
+            <p class="movie-release"><strong>Release Date:</strong> {{movie.date}}</p>
+        </div>
+    </div>
+
+    <div class="movie-description">
+        <h2>Description</h2>
+        <p>{{movie.info}}</p>
+    </div>
+
+    <div class="movie-cast">
+        <h2>Cast</h2>
+        <ul class="cast-list">
+            <li>Actor 1 as Character 1</li>
+            <li>Actor 2 as Character 2</li>
+            <li>Actor 3 as Character 3</li>
+            <li>Actor 4 as Character 4</li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}

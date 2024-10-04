@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y^8h(cbe!dp=a3wx%d0qen#t*0rk$dv3mp+)5s@0n@tuu10!c1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     #apps
     'KinoVibe.apps.KinovibeConfig',
+    'users.apps.UsersConfig',
+    
     
 ]
 

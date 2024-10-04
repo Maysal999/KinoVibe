@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <h3>Categories</h3>
+    {% if genres %}
+    <ul class="category-list">
+        {% for genre in genres  %}
+        <li><a href="{{genre.get_absolute_url}}">{{genre.genre|capfirst}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %} 
