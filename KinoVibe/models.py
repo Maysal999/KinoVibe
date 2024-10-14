@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 # Create your models here.
 from . import utils
 class Category(models.Model):
@@ -45,3 +47,16 @@ class Videofile(models.Model):
     def __str__(self) -> str:
         return f'{self.title}'
 
+class Review(models.Model):
+    text = models.TextField(verbose_name='Отзыв')
+    assesment = models.CharField(verbose_name='Оценка', max_length=50, choices=utils.choises_rating)
+    product = models.ForeignKey('KinoVibe.Videofile', on_delete=models.CASCADE, verbose_name='продукт',related_name='review_product')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь')
+    created = models.DateTimeField(verbose_name='дата', auto_now_add=True)
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for Review."""
+
+        verbose_name = 'Review'
+        verbose_name_plural = 'Reviews'

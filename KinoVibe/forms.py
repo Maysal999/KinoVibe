@@ -9,3 +9,8 @@ class MovieFilterForm(forms.Form):
     )
     
     
+class ReviewForm(forms.Form):
+    class Meta:
+        fields = ['text',"assesment"]
+
+        

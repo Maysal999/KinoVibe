@@ -1,0 +1,63 @@
+.registration-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.registration-container label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.registration-container input[type="submit"]:hover {
+    background-color: darkorange;
+}
+
+/* Additional Styling */
+.registration-container .form-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.registration-container .form-link a {
+    text-decoration: none;
+    color: orange;
+}
+
+.registration-container .form-link a:hover {
+    text-decoration: underline;
+}

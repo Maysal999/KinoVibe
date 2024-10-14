@@ -1,5 +1,7 @@
+{% load cinema_tags %}
 
 {% for con in content  %}
+
     
 <a href="{% url 'show_video' pk=con.pk %}" class="card-link1111" style="text-decoration: none;">
     <div class="card-container1111">
@@ -8,7 +10,11 @@
             <img src="{{con.background_image.url}}" alt="Movie Poster" class="movie-poster1111" style="height: 300px; width: 200px;">
             <div class="movie-info1111">
                 <h3 class="movie-title1111">{{con.title}}</h3>
-                <p class="movie-year-genre1111">{{con.date.year}}-год, комедия</p>
+                <p class="movie-year-genre1111">{{con.date.year}}-год,{% genre_filter movie_id=con %}
+                
+              
+                    
+                    </p>
                 <span class="movie-rating1111">6.2</span>
             </div>
         </div>

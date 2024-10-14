@@ -5,14 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/content.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/show_video.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/nav2.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/content.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/card1.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/show_video.css' %}">
+   
+    <title>cinema</title>
 
-    
+    <!--Stylesheet-->
+
     {% block css %}
       
     {% endblock css %}
@@ -33,6 +37,6 @@
               
           {% endblock content %}
         </div>
-  
+  <script src="{% static 'movie/js/script.js' %}"></script>
 </body>
 </html>

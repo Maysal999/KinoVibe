@@ -1,6 +1,4 @@
-<div class="search-container">
-    <form >
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search">Submit</i></button>
-    </form>
-  </div>
+<form class="search-form" method="get" action="{% url 'search' %}">
+  <input  name="key" type="search" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>

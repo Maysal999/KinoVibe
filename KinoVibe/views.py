@@ -6,6 +6,7 @@ from django.views.generic import ListView,TemplateView,DetailView
 
 from .forms import MovieFilterForm
 from .models import Category, Genre, Videofile
+from .utils import search_filter
 # Create your views here.
 
 class IndexView(TemplateView):
@@ -21,14 +22,17 @@ def get_all_totoly_context():
         'categories':categories
     }
     return context
- 
+def get_genre(genre):
+    movie_genre = Genre.objects.filter(genre__in=genre)
+    return movie_genre
 
 def index(request):
     categories = Genre.objects.all()
     video = Videofile.objects.all()
+  
     context = {
         'categories':categories,
-        'content' : video
+        'content' : video,
     }
     return render(request,'pages/index.html',context)
 
@@ -55,13 +59,19 @@ class Category(ListView):
 class ShowView(DetailView):
     template_name = 'pages/show_video.html'
     context_object_name = 'movie'
-    model = Videofile     
+    model = Videofile
+    # def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    #     context =  super().get_context_data(**kwargs)  
+    #     context['genre'] = Videofile.genre   
 
-# def movie_filter(request):
-#     movies = Videofile.objects.all()
-#     form = MovieFilterForm(request.GET)
-#     if form.is_valid():
-#         selected = form.cleaned_data.get('genre')
-#         if selected:
-#             movies = movies.filter(genre__in=selected).distinct()
-#     return render(request,'components/tools/forms_genre.html',{'movies' : movies,'form' : form})
+class MovieFilterSearch(ListView):
+    template_name = 'pages/index.html'
+    context_object_name = 'content'
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Поиск'
+        return context
+    def get_queryset(self):
+        movie = search_filter(self.request)
+        
+        return movie

@@ -10,20 +10,21 @@ from .forms import RegisterForm, LoginForm
 
 # Create your views here.
 class RegisterView(generic.CreateView):
-    template_name = 'pages/login.html'
+    template_name = 'pages/user/login.html'
     form_class = RegisterForm
     
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         user = form.save()
         login(self.request,user)
-
+        return redirect('index')
+    
 def logout_user(request):
     logout(request)
     return redirect('index')
     
 
 class UserLoginView(LoginView):
-    template_name = 'pages/login.html'
+    template_name = 'pages/user/login.html'
     form_class = LoginForm
 
     def get_success_url(self) -> str:

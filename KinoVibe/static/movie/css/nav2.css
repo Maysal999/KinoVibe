@@ -1,0 +1,72 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar-left a,
+.navbar-right a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navbar-left .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: orange;
+}
+
+.search-form input {
+    padding: 5px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px; /* To create space between elements */
+}
+
+.dropdown-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Positioning dropdown below the button */
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
