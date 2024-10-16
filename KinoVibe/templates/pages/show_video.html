@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load cinema_tags %}
 
 {% block content %}
     
@@ -10,24 +10,34 @@
         <img src="{{ movie.background_image.url}}" alt="Movie Image" class="movie-image">
         <div class="movie-info">
             <h1 class="movie-title">{{movie.title}}</h1>
-            <p class="movie-genre"><strong>Genre:</strong>{{movie.genre}}</p>
-            <p class="movie-release"><strong>Release Date:</strong> {{movie.date}}</p>
+            <p class="movie-genre"><strong>Жанры:</strong>{% genre_filter movie_id=movie.title %}</p>
+            <p class="movie-release"><strong>Дата выпуска:</strong> {{movie.date}}</p>
         </div>
     </div>
 
     <div class="movie-description">
-        <h2>Description</h2>
+        <h2>Информация</h2>
         <p>{{movie.info}}</p>
     </div>
 
     <div class="movie-cast">
-        <h2>Cast</h2>
+        <h2>Актеры</h2>
         <ul class="cast-list">
-            <li>Actor 1 as Character 1</li>
-            <li>Actor 2 as Character 2</li>
-            <li>Actor 3 as Character 3</li>
-            <li>Actor 4 as Character 4</li>
+            {% movie_actores movie_id=movie.id as actores  %}
+            <ul>
+    
+                {% include 'components/header/genre_show_view.html' %}
+                    
+            </ul>
+            
+                
         </ul>
     </div>
+    {% if not request.user.is_authenticated %}
+    <h1 style="margin: 30%;">Видео можете посмотреть только после регистрации или войти</h1>
+    {% else %}
+    {% include 'components/header/show_movie.html' %}     
+    {% endif %}
+        
 </div>
 {% endblock content %}

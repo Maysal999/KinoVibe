@@ -38,6 +38,7 @@ class Videofile(models.Model):
     title = models.CharField(max_length=50)
     background_image = models.ImageField(upload_to='image',null=True)
     video = models.FileField(upload_to='videos',null=True)
+    actore = models.ManyToManyField('KinoVibe.Actore',verbose_name='актеры')
     genre = models.ManyToManyField('KinoVibe.Genre',verbose_name='genre')
     date = models.DateField(verbose_name='data_vypuska', null=True)
     info = models.CharField(max_length=500)

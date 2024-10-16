@@ -1,12 +1,13 @@
 
 .movie-details-container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
+    width: 90%;
 }
 
 .movie-header {
