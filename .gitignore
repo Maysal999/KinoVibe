@@ -1,0 +1,9 @@
+__pycache__
+*.sqlite3
+venv
+media 
+video
+videos
+image
+media/*
+actior

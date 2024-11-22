@@ -1,0 +1,13 @@
+
+<div class="sidebar">
+  <ul>
+      
+    
+    {% for cat in  categories %}
+      <li><a href='{% url "category" cat.id %}'>{{cat.category|capfirst}}</a></li>
+    {% endfor %}
+      
+          
+  </ul>
+
+</div>

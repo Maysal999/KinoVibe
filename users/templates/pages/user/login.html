@@ -1,0 +1,35 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'user/css/login1.css' %}">
+</head>
+
+
+{% block content %}
+<div class="registration-container">
+    <h2>Sign Up</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for f  in form  %}
+        <label for="{{f.id_for_label}}">{{f.label}}</label>
+        {{f}}
+        {% endfor %}
+        <input type="submit" value="Sign Up">
+    </form>
+    <div class="form-link">
+        <p>Already have an account? <a href="{% url 'register' %}">Login here</a></p>
+    </div>
+    
+  
+        
+   
+        
+</div>
+{% endblock content %}

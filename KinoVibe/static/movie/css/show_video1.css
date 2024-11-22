@@ -1,0 +1,56 @@
+
+.movie-details-container {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    width: 90%;
+}
+
+.movie-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movie-image {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.movie-genre, .movie-release {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.movie-description, .movie-cast {
+    margin-top: 30px;
+}
+
+.movie-description p, .cast-list {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cast-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.cast-list li {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,19 @@
+
+{% for review in reviews %}
+<div class="review-card">
+    <div class="card-header">
+        <div class="user-info">
+            <strong>{{ review.user.username }}</strong> <!-- Имя пользователя -->
+            <span class="assesment">Оценка: {{ review.assesment }}/10</span> <!-- Оценка -->
+        </div>
+        <div class="review-date">
+            {{ review.created|date:"d M Y, H:i" }} <!-- Дата создания отзыва -->
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="review-text">{{ review.text }}</p> <!-- Текст отзыва -->
+    </div>
+</div>
+
+{% endfor %}
+    

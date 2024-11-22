@@ -1,0 +1,26 @@
+{% load cinema_tags %}
+{% for con in content  %}
+
+
+
+<a href="{% url 'show_video'  slug=con.slug %}" class="card-link1111" style="text-decoration: none;">
+    <div class="card-container1111">
+        <!-- Movie Card -->
+        <div class="movie-card1111">
+            <img src="{{con.background_image.url}}" alt="Movie Poster" class="movie-poster1111" style="height: 300px; width: 200px;">
+            <div class="movie-info1111">
+                <h3 class="movie-title1111">{{con.title}}</h3>
+                <p class="movie-year-genre1111">{{con.date.year}}-год,{{con.genre}}
+                
+              
+                    
+                    </p>
+                <span class="movie-rating1111">{{con.rating}}</span>{{movie.genres}}
+            </div>
+        </div>
+    
+        <!-- Copy and repeat for additional cards -->
+    </div>
+</a>
+{% endfor %}
+    

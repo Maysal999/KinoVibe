@@ -1,0 +1,71 @@
+<!-- <nav class="navbar-kino" style="height: 50px;">
+    <h1>KinoVibe</h1>
+
+    {% include 'components/header/search.html' %}
+    <ul class="list-ul" style="display: flex;">
+        <li class="list-nav" style="color: black;"><a href="#" style="margin-top: 15px;">HOME</a></li>
+        {% if is_authenticated %}
+        <li class="list-nav" ><a href="#" style="margin-top: 15px;">PROFILE</a></li>
+        {% else %}
+        <li class="list-nav"><a href="#" style="margin-top: 15px;">SIGN IN</a></li>
+        <li class="list-nav"><a href="#" style="margin-top: 15px;">SIGN UP</a></li>
+        
+        {% endif %}
+            
+        
+        
+    </ul>
+
+</nav> -->
+{% load static %}
+<!-- <nav class="navbar">
+    <div class="logo">
+        <a href="#">KinoVibe</a>
+    </div>
+        {% include 'components/header/search.html' %}
+    <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        
+        {% if not  request.user.is_authenticated %}
+            
+        <li><a href="{% url 'register' %}">Sign In</a></li>
+        <li><a href="{% url 'login' %}">Sign Up</a></li>
+        {% else %}
+        {{ request.user.username }}
+        <li>
+            <a href="{% url 'logout' %}"> logout</a>
+        </li>
+        {% include 'components/header/droptown.html' %}
+        {% endif %}
+
+    </ul>
+</nav> -->
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="#" class="logo">KinoVibe</a>
+        <a href="{% url 'index' %}">Home</a>
+    </div>
+    {% include 'components/header/search.html' %}
+    
+    {% if not request.user.is_authenticated %}
+    <div class="navbar-right">
+        <a href="{% url 'login' %}">Sign In</a>
+        <a href="{% url 'register' %}">Sign Up</a>
+
+        <!-- Search Form -->
+    {% else %} 
+
+    <div class="dropdown">
+        <button class="dropdown-btn">{{request.user.username}}</button>
+        <div class="dropdown-content">
+            <a href="#">Comedy</a>
+            <a href="#">Horror</a>
+            <a href="#">History</a>
+            <a href="{% url 'logout' %}"> logout</a>
+        </div>
+    </div>
+    {% endif %} 
+        <!-- Dropdown Menu -->
+    </div>
+</nav>

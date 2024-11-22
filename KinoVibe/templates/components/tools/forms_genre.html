@@ -1,0 +1,17 @@
+<form method="get">
+    {{form.as_p}}
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    
+    {% for movie in  movies %}
+        
+    <li>
+{{movie.title}}
+    </li>
+    {% empty %}
+    <li>No movies found</li>
+    {% endfor %}
+        
+</ul>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load cinema_tags %}
+{% movie_tags movie_id=movie.id as moviess %}
+{% block content %}
+    
+
+<div class="movie-details-container" >
+    <div class="movie-header">
+        <img src="{{ movie.background_image.url}}" alt="Movie Image" class="movie-image">
+        <div class="movie-info">
+            <h1 class="movie-title">{{movie.title}}</h1>
+            <p class="movie-genre"><strong>Жанры:</strong><a href="">
+                
+                {{movie.genre}}
+                    
+            </a></p>
+            <p class="movie-release"><strong>Дата выпуска:</strong> {{movie.date}}</p>
+            <p class="movie-release"><strong>Дата выпуска:</strong> {{movie.country_1}}</p>
+            
+        </div>
+    </div>
+
+    <div class="movie-description">
+        <h2>Информация</h2>
+        <p>{{movie.info}}</p>
+    </div>
+
+    <div class="movie-cast">
+        <h2>Актеры</h2>
+        <ul class="cast-list">
+            <ul>
+    
+                {% include 'components/header/genre_show_view.html' %}
+                    
+            </ul>
+            
+                
+        </ul>
+    </div>
+    {% if not request.user.is_authenticated %}
+    <h1 style="margin: 30%;">Видео можете посмотреть только после регистрации или войти</h1>
+    {% else %}
+    {% include 'components/header/show_movie.html' %}  
+    {% endif %}
+    {% include 'components/procat/review.html' %}
+    {% review_tag movie_id=movie.id as reviews %}
+    
+
+            <li>{% include 'components/procat/review_show.html' %}</li>
+                
+            
+    
+        
+        
+</div>
+
+{% endblock content %}

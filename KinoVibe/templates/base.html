@@ -1,0 +1,50 @@
+{% load static %}
+{% load cinema_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'movie/css/nav2.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/content.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/card2.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/show_video1.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/show_video1/movie_actores.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/review_form_movie.css' %}">
+    <link rel="stylesheet" href="{% static 'movie/css/review_show.css' %}">
+
+
+
+   
+    <title>cinema</title>
+
+    <!--Stylesheet-->
+
+    {% block css %}
+      
+    {% endblock css %}
+      
+
+
+
+    <title>Document</title>
+</head>
+<body>
+    {% include 'components/header/navbar.html' %}
+    
+    <div class="continer" style="display: flex;">
+          {% category %}
+        <div class="content" style=" display: flex;  width: 75%; margin-left: 5%; margin-right: 20px; flex-wrap:wrap ; ">
+          
+          {% block content %}
+              
+          {% endblock content %}
+        </div>
+  <script src="{% static 'movie/js/script.js' %}"></script>
+  <script src="{% static 'movie/js/movie.js' %}"></script>
+
+</body>
+</html>

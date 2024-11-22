@@ -1,0 +1,71 @@
+.card-container1111 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.movie-card1111 {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.movie-poster1111 {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-info1111 {
+    padding: 10px;
+}
+
+.movie-title1111 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.movie-year-genre1111 {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.movie-rating1111 {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.tickets-btn1111 {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tickets-btn1111:hover {
+    background-color: #c0392b;
+}
+
+
+.content {
+    column-gap:5em;
+}

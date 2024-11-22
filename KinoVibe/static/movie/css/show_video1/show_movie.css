@@ -1,0 +1,53 @@
+.video-container12 {
+    position: relative;
+    width: 640px;
+    height: 360px;
+    background-color: #000;
+}
+
+.video-element12 {
+    width: 100%;
+    height: 100%;
+}
+
+.controls12 {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.video-container12:hover .controls12 {
+    opacity: 1;
+}
+
+.control-btn12 {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.seek-bar12 {
+    flex-grow: 1;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.volume-bar12 {
+    width: 100px;
+    cursor: pointer;
+}
+
+.control-btn12:focus, .seek-bar12:focus, .volume-bar12:focus {
+    outline: none;
+}
