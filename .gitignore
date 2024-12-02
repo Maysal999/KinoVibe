@@ -1,9 +1,9 @@
 __pycache__
 *.sqlite3
 venv
-media 
+/media/ 
 video
 videos
 image
-media/*
+/media/*
 actior
