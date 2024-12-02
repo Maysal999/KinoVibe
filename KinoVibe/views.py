@@ -72,10 +72,7 @@ class ShowView(DetailView,CreateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['title'] = context['movie'].title
-        context['movie'] = self.model.objects.prefetch_related('genre').all()
-        review = Review.objects.all()
-        context['review'] = review.filter(movie__id=context['movie'].id).select_related('user')
-
+        context['review'] = Review.objects.filter(movie__id=context['movie'].id).select_related('user')
         return context
     # def get_object(self, queryset=None):
     #     # Получение объекта по country и slug
@@ -126,15 +123,3 @@ class ReviewAddView(generic.CreateView):
         
         return HttpResponse('Неправильный запрос', status=400)
 
-# def review_view(request):
-#     try:
-#         form = TestForm()
-#         if request.method == 'POST':
-#             form = TestForm(request.POST)
-#             if form.is_valid():
-#                 form.save()
-#         return render(request, 'pages/test.html', {'form': form})
-#     except Exception as e:
-#         # Логируем ошибку
-#         print(f"Error: {e}")
-#         return HttpResponseServerError("Internal Server Error")
