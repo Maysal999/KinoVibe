@@ -44,10 +44,7 @@ INSTALLED_APPS = [
     'KinoVibe.apps.KinovibeConfig',
     'users.apps.UsersConfig',
     "debug_toolbar",
-     'allauth',
-    'allauth.account',
-    'allauth.socialaccount.providers.google',
-    
+
     
     
 ]
@@ -66,7 +63,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 
-     "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'Cinema.urls'
@@ -155,16 +151,16 @@ MEDIA_URL= "/media/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Provider specific settings
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
+# # Provider specific settings
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         # For each OAuth based provider, either add a ``SocialApp``
+#         # (``socialaccount`` app) containing the required client
+#         # credentials, or list them here:
+#         'APP': {
+#             'client_id': '123',
+#             'secret': '456',
+#             'key': ''
+#         }
+#     }
+# }

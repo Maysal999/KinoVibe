@@ -1,13 +1,13 @@
 <h1>Избранные фильмы</h1>
 <ul>
-    {% for action in favorites %}
-        <li>{{ action.video.title }}</li>
+    {% for a in action %}
+        <li>{{ a.video.title }}</li>
     {% endfor %}
 </ul>
 
 <h1>Смотреть позже</h1>
 <ul>
-    {% for action in watch_later %}
-        <li>{{ action.video.title }}</li>
+     {% for a in action %}
+        <li>{{ a.video.title }}</li>
     {% endfor %}
 </ul>

@@ -59,9 +59,7 @@
     <div class="dropdown">
         <button class="dropdown-btn">{{request.user.username}}</button>
         <div class="dropdown-content">
-            <a href="#">Comedy</a>
-            <a href="#">Horror</a>
-            <a href="#">History</a>
+            <a href="{% url 'favorite' pk=request.user.id %}">Избранные</a>
             <a href="{% url 'logout' %}"> logout</a>
         </div>
     </div>

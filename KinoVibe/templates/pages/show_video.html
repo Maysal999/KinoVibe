@@ -11,7 +11,14 @@
             <h1 class="movie-title">{{movie.title}}</h1>
             <p class="movie-genre"><strong>Жанры:</strong><a href="">
                 
-                {{movie.genre}}
+                
+                
+                
+                {% for g in  genress %}
+                    {{g.genre}}
+                {% endfor %}
+                    
+                    
                     
             </a></p>
             <p class="movie-release"><strong>Дата выпуска:</strong> {{movie.date}}</p>

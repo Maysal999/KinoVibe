@@ -1,4 +1,7 @@
+from itertools import product
 from typing import Any
+
+import requests
 from django.db.models.query import QuerySet
 from django.forms import BaseModelForm
 from django.http import HttpResponse, HttpResponseServerError
@@ -9,9 +12,10 @@ from django.views import generic
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 
+# from .utils import movie_api
 
 from .forms import  ReviewForm, TestForm
-from .models import Category, Genre, Review, Videofile
+from .models import Category, Genre, Review, Videofile, UserAction
 from .utils import search_filter
 # Create your views here.
 
@@ -31,7 +35,7 @@ def get_all_totoly_context():
     return context
 def get_genre(genre):
     movie_genre = Genre.objects.filter(genre__in=genre)
-    return movie_genre
+    return {"genress" : movie_genre}
 
 def index(request):
     video = Videofile.objects.prefetch_related('genre')
@@ -72,14 +76,10 @@ class ShowView(DetailView,CreateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['title'] = context['movie'].title
-        context['review'] = Review.objects.filter(movie__id=context['movie'].id).select_related('user')
+        context['review'] = Review.objects.filter(movie__id=context['movie'].id)
+        context['genress'] = Genre.objects.filter(videofile__id=context['movie'].id)
         return context
-    # def get_object(self, queryset=None):
-    #     # Получение объекта по country и slug
-    #     country = self.kwargs['country']
-    #     slug = self.kwargs['slug']
-    #     return get_object_or_404(Videofile, slug=f"{country}/{slug}")
-    
+
     
     
 # @method_decorator(cache_page(60*15), name='dispatch')  # Кэшировать на 15 минут
@@ -92,8 +92,8 @@ class MovieFilterSearch(ListView):
         return context
     def get_queryset(self):
         movie = search_filter(self.request)
-        
         return movie
+
 class ReviewAddView(generic.CreateView):
     model = Review
     form_class = ReviewForm
@@ -102,7 +102,7 @@ class ReviewAddView(generic.CreateView):
     def form_valid(self, form):
         if form.is_valid():
             # Получаем фильм по ID из формы
-            movie = Videofile.objects.get(id=form.data['movie'])
+            movie = Videofile.objects.get(slug=form.data['movie'])
             
             # Рассчитываем новый рейтинг
             review_count = movie.review_movie.count()
@@ -122,4 +122,23 @@ class ReviewAddView(generic.CreateView):
             return redirect('show_video', form.data['movie'])
         
         return HttpResponse('Неправильный запрос', status=400)
+class FavoriteView(generic.ListView):
+    context_object_name = 'action'
+    model = UserAction
+    template_name = 'pages/favorite.html'
+
+# class MovieApiShowView(TemplateView):
+#     template_name = 'pages/test_api.html'
+#     context_object_name = 'movies'
+#     api_secret = '5514eb7edaa910c57713f6391196ab48'
+#     url = f'https://api.themoviedb.org/3/movie/popular?api_key={api_secret}&language=en-US&page=1'
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         try:
+#             response = requests.get(url=self.url)
+#             data = response.json()
+#             if response.status_code == 200:
+#                 context['movie'] =
+#         return context
+
 

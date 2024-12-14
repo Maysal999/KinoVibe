@@ -1,6 +1,6 @@
+import requests
 
-from django.db.models.functions import Lower,Trim
-
+from typing import Union
 choises_rating = (
     ('1','1'),
     ('2','2'),
@@ -53,3 +53,11 @@ careers = (
     ("модель","модель"),
     ("певец","певец"),
 )
+
+# def movie_api( ):
+#     api_secret = '5514eb7edaa910c57713f6391196ab48'
+#     url = f'https://api.themoviedb.org/3/movie/popular?api_key=5514eb7edaa910c57713f6391196ab48&language=en-US&page=1'
+#     response = requests.get(url)
+#     data = response.json()
+#     print(data)
+

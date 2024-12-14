@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from .models import Category, Videofile, Personaj, Genre, Country, Careers
+from .models import Category, Videofile, Personaj, Genre, Country, Careers, UserAction
 
 # Register your models here.
 
@@ -47,3 +47,10 @@ class ActoreAdmin(admin.ModelAdmin):
     list_display = ('title_country',)
     list_filter = ('title_country',)
     prepopulated_fields  = {"slug" : ["title_country"],}
+
+@admin.register(UserAction)
+class ActoreAdmin(admin.ModelAdmin):
+    '''Admin View for Actior'''
+
+
+

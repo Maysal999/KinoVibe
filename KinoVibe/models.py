@@ -112,6 +112,8 @@ class Review(models.Model):
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Reviews'
 
+
+
 class UserAction(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="actions")
     video = models.ForeignKey(Videofile, on_delete=models.CASCADE, related_name="actions")
@@ -120,3 +122,4 @@ class UserAction(models.Model):
 
     class Meta:
         unique_together = ('user', 'video')
+

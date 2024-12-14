@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('kino/',include('KinoVibe.urls')),
     path('user/',include('users.urls')),
-    path('accounts/', include('allauth.urls')),
+
 
 ]
 
