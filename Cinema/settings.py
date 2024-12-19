@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #apps
-    'KinoVibe.apps.KinovibeConfig',
-    'users.apps.UsersConfig',
-    "debug_toolbar",
+    'KinoVibe',
+    'users',
+    # "debug_toolbar",
 
     
     
